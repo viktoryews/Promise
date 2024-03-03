@@ -24,14 +24,14 @@ const addProduct = () => {
 addingReview.addEventListener("click", addProduct);
 
 const updateReviewList = () => {
-  itemList.innerHTML = "";
-  let reviewList = JSON.parse(localStorage.getItem("reviewList")) || [];
 
+  itemList.innerHTML = "";
+
+  let reviewList = JSON.parse(localStorage.getItem("reviewList")) || [];
   let products = [...new Set(reviewList.map((review) => review.product))];
 
   products.forEach((product) => {
     let li = document.createElement("li");
-    li.classList.add("product-list");
     li.textContent = product;
     itemList.appendChild(li);
 
@@ -45,6 +45,7 @@ const updateReviewList = () => {
   });
 
   function displayReviews(product, container) {
+
     container.innerHTML = "";
 
     let reviewList = JSON.parse(localStorage.getItem("reviewList")) || [];
@@ -81,12 +82,12 @@ const updateReviewList = () => {
   }
 
   function deleteReview(review) {
+
     let reviewList = JSON.parse(localStorage.getItem("reviewList")) || [];
 
     const index = reviewList.findIndex(
       (r) => r.product === review.product && r.text === review.text
     );
-
     if (index !== -1) {
       reviewList.splice(index, 1);
     }

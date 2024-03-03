@@ -1,4 +1,26 @@
 ul li {
-    list-style: none; /* убираем дефолтные маркеры */
+    list-style: none;
     cursor: pointer;
+}
+
+html,
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: rgb(224, 221, 221);
+}
+
+.delete-button {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid red;
+  outline: none;
+  transition: 1s ease-in-out;
+}
+
+.delete-button:hover {
+  transition: 1s ease-in-out;
+  background: red;
 }
